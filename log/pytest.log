@@ -1,0 +1,84 @@
+(venv) dell@dell-G7-7588:~/Desktop/evaluation$ python3 run_audit.py 
+================================================================================
+BẮT ĐẦU KIỂM TOÁN TOÀN DIỆN 5 TẦNG KỸ THUẬT (DATA -> GRAPH -> MRL -> IR -> GENERATION)
+================================================================================
+========================================================================================= test session starts =========================================================================================
+platform linux -- Python 3.14.4, pytest-9.1.1, pluggy-1.6.0 -- /home/dell/Desktop/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/dell/Desktop/evaluation
+plugins: langsmith-0.11.1, asyncio-1.4.0, rerunfailures-12.0, repeat-0.9.4, deepeval-2.9.3, xdist-3.8.0, anyio-4.14.2, Faker-40.37.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 30 items                                                                                                                                                                                    
+
+tests/test_tier1_data_curation.py::TestLinguisticQualityAndTextGate::test_corrupted_encoding_detection PASSED
+tests/test_tier1_data_curation.py::TestLinguisticQualityAndTextGate::test_vietnamese_accented_ratio_gate PASSED
+tests/test_tier1_data_curation.py::TestLinguisticQualityAndTextGate::test_short_content_detection PASSED
+tests/test_tier1_data_curation.py::TestLinguisticQualityAndTextGate::test_pdf_junk_template_heuristic PASSED
+tests/test_tier1_data_curation.py::TestBoilerplateCleaningAndMetadataExtraction::test_enactment_clause_preservation PASSED
+tests/test_tier1_data_curation.py::TestBoilerplateCleaningAndMetadataExtraction::test_regex_metadata_extraction_standard PASSED
+tests/test_tier1_data_curation.py::TestBoilerplateCleaningAndMetadataExtraction::test_regex_metadata_extraction_complex_sign PASSED
+tests/test_tier1_data_curation.py::TestASTChunkingIntegrity::test_chunk_schema_and_text_content_sync PASSED
+tests/test_tier1_data_curation.py::TestASTChunkingIntegrity::test_alphabetic_article_numbering PASSED
+tests/test_tier1_data_curation.py::TestASTChunkingIntegrity::test_multi_level_hierarchy_nesting_and_no_pollution PASSED
+tests/test_tier1_data_curation.py::TestRealCorpusIntegrity::test_processed_parquet_corpus_sample PASSED
+tests/test_tier1_data_curation.py::TestRealCorpusIntegrity::test_raw_shards_gzip_stream_integrity PASSED
+tests/test_tier2_graph_multistore.py::TestNeo4jGraphIntegrity::test_neo4j_constraints_active PASSED
+tests/test_tier2_graph_multistore.py::TestNeo4jGraphIntegrity::test_zero_orphaned_chunks PASSED
+tests/test_tier2_graph_multistore.py::TestNeo4jGraphIntegrity::test_no_self_referencing_legal_relations PASSED
+tests/test_tier2_graph_multistore.py::TestNeo4jGraphIntegrity::test_exact_chunk_count_benchmark PASSED
+tests/test_tier2_graph_multistore.py::TestQdrantStorageIntegrity::test_qdrant_collection_status PASSED
+tests/test_tier3_representation_mrl.py::TestMatryoshkaLossMath::test_l2_normalization_after_slicing PASSED
+tests/test_tier3_representation_mrl.py::TestMatryoshkaLossMath::test_mrl_loss_computation_and_numerical_stability PASSED
+tests/test_tier3_representation_mrl.py::TestMatryoshkaLossMath::test_gradient_flow_across_all_slices PASSED
+tests/test_tier3_representation_mrl.py::TestRepresentationGeometry::test_cosine_anisotropy_prevention PASSED
+tests/test_tier3_representation_mrl.py::TestRepresentationGeometry::test_ranking_preservation_between_full_and_sliced_dim PASSED
+Loading weights: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 391/391 [00:00<00:00, 19399.93it/s]
+PASSED
+tests/test_tier4_ir_benchmark.py::TestIRPipelineComponents::test_dense_vector_search_response PASSED
+tests/test_tier4_ir_benchmark.py::TestHybridRRFAndSLA::test_rrf_rank_fusion_deduplication PASSED
+tests/test_tier4_ir_benchmark.py::TestHybridRRFAndSLA::test_full_architecture_benchmark_sample 
+[Kết quả Tầng 4] Doc Hit@5 (Zero-shot Baseline): 50.0% (5/10)
+[Kết quả Tầng 4] Độ trễ trung bình trên CPU máy trạm: 3253.3ms
+PASSED
+Loading weights: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 391/391 [00:00<00:00, 17781.92it/s]
+PASSED
+tests/test_tier5_generation_safety.py::TestRAGGenerationIntegrity::test_citation_presence_in_retrieved_context PASSED
+tests/test_tier5_generation_safety.py::TestLegalSafetyGuardrails::test_empty_query_handling PASSED
+tests/test_tier5_generation_safety.py::TestLegalSafetyGuardrails::test_out_of_domain_or_malicious_query_guardrail PASSEDRunning teardown with pytest sessionfinish...
+
+
+========================================================================================== warnings summary ===========================================================================================
+../venv/lib/python3.14/site-packages/torch/cuda/__init__.py:422
+  /home/dell/Desktop/venv/lib/python3.14/site-packages/torch/cuda/__init__.py:422: UserWarning: Found GPU0 NVIDIA GeForce GTX 1050 Ti which is of compute capability (CC) 6.1.
+  The following list shows the CCs this version of PyTorch was built for and the hardware CCs it supports:
+  - 7.5 which supports hardware CC >=7.5,<8.0
+  - 8.0 which supports hardware CC >=8.0,<9.0 except {8.7}
+  - 8.6 which supports hardware CC >=8.6,<9.0 except {8.7}
+  - 9.0 which supports hardware CC >=9.0,<10.0
+  - 10.0 which supports hardware CC >=10.0,<11.0 except {10.1}
+  - 12.0 which supports hardware CC >=12.0,<13.0
+  Your installed torch==2.13.0+cu130 does not include kernels for this GPU. Reinstall the same version against a CUDA build that does, e.g.:
+    For CUDA 12.6 use pip install torch==2.13.0 --index-url https://download.pytorch.org/whl/cu126
+    _warn_unsupported_code(d, device_cc, code_ccs)
+
+../venv/lib/python3.14/site-packages/torch/cuda/__init__.py:540
+  /home/dell/Desktop/venv/lib/python3.14/site-packages/torch/cuda/__init__.py:540: UserWarning: 
+  NVIDIA GeForce GTX 1050 Ti with CUDA capability sm_61 is not compatible with the current PyTorch installation.
+  The current PyTorch install supports CUDA capabilities sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.
+  If you want to use the NVIDIA GeForce GTX 1050 Ti GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+  
+    queued_call()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================================================================================= slowest 5 durations =========================================================================================
+60.56s call     tests/test_tier4_ir_benchmark.py::TestIRPipelineComponents::test_sparse_bm25_search_response
+32.54s call     tests/test_tier4_ir_benchmark.py::TestHybridRRFAndSLA::test_full_architecture_benchmark_sample
+32.45s call     tests/test_tier2_graph_multistore.py::TestNeo4jGraphIntegrity::test_no_self_referencing_legal_relations
+7.63s call     tests/test_tier5_generation_safety.py::TestRAGGenerationIntegrity::test_end_to_end_pipeline_execution
+7.33s call     tests/test_tier5_generation_safety.py::TestRAGGenerationIntegrity::test_citation_presence_in_retrieved_context
+============================================================================= 30 passed, 2 warnings in 186.79s (0:03:06) ==============================================================================
+--------------------------------------------------------------------------------
+✓ TOÀN BỘ CÁC BÀI KIỂM THỬ TRÊN CẢ 5 TẦNG ĐÃ VƯỢT QUA (206.65s)
+Hệ thống đạt chuẩn toàn vẹn khoa học từ tầng dữ liệu thô đến mô hình sinh.
+================================================================================
+(venv) dell@dell-G7-7588:~/Desktop/evaluation$ 

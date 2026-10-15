@@ -1,0 +1,226 @@
+(venv) dell@dell-G7-7588:~/Desktop/evaluation$ promptfoo eval -c configs/promptfooconfig.generation.yaml --table
+Starting evaluation eval-Xft-2026-10-15T07:00:56
+Running 10 test cases (up to 1 at a time)...
+Serial grading grouping disabled because per-eval-step timeout is configured; model-graded judges may reload between rows.
+Python worker stderr: GPU hiện tại không hỗ trợ kernel sm_70+ (GTX 1050 Ti CC 6.1). Fallback an toàn về 'cpu'.
+Python worker stderr: 2026-10-15 14:01:10,804 | [INFO] | Kết nối Qdrant Engine thành công tại localhost:6333 (Timeout: 120s).
+Python worker stderr: 2026-10-15 14:01:10,944 | [INFO] | HEAD http://localhost:9200/vietlaw_sparse_idx [status:200 duration:0.138s]
+Python worker stderr: 2026-10-15 14:01:10,944 | [INFO] | Elasticsearch index [vietlaw_sparse_idx] đã sẵn sàng.
+Python worker stderr: 2026-10-15 14:01:18,128 | [INFO] | Loading SentenceTransformer model from BAAI/bge-m3.
+Python worker stderr: Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]
+Python worker stderr: Loading weights: 100%|██████████| 391/391 [00:00<00:00, 32941.10it/s]
+Python worker stderr: 2026-10-15 14:01:19,838 | [INFO] | LegalHybridRetriever sẵn sàng: Alpha=0.20 | VectorDim=256 | Qdrant=[vietlawbert_chunks] | ES=[vietlaw_sparse_idx]
+Python worker stderr: 2026-10-15 14:01:19,975 | [INFO] | POST http://localhost:9200/vietlaw_sparse_idx/_search [status:200 duration:0.137s]
+Python worker stderr: 2026-10-15 14:01:20,145 | [INFO] | HTTP Request: POST http://localhost:6333/collections/vietlawbert_chunks/points/search "HTTP/1.1 200 OK"
+Python worker stderr: 2026-10-15 14:01:20,403 | [INFO] | HTTP Request: POST http://localhost:6333/collections/vietlawbert_chunks/points/search "HTTP/1.1 200 OK"
+Python worker stderr: 2026-10-15 14:01:20,763 | [INFO] | POST http://localhost:9200/vietlaw_sparse_idx/_search [status:200 duration:0.358s]
+Python worker stderr: 2026-10-15 14:01:20,765 | [INFO] | Đang nạp cache vector đồ thị 128d từ graph_embeddings_128d.parquet (Vectorized Fast Load)...
+Python worker stderr: 2026-10-15 14:01:34,089 | [INFO] | ✓ Nạp thành công 1284637 vector đồ thị vào cache truy xuất.
+Python worker stderr: 2026-10-15 14:01:34,153 | [INFO] | Kết nối Qdrant Engine thành công tại localhost:6333 (Timeout: 120s).
+Python worker stderr: 2026-10-15 14:01:34,223 | [INFO] | HEAD http://localhost:9200/vietlaw_sparse_idx [status:200 duration:0.069s]
+Python worker stderr: 2026-10-15 14:01:34,223 | [INFO] | Elasticsearch index [vietlaw_sparse_idx] đã sẵn sàng.
+Python worker stderr: 2026-10-15 14:01:34,226 | [INFO] | Loading SentenceTransformer model from BAAI/bge-m3.
+Python worker stderr: Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]
+Python worker stderr: Loading weights: 100%|██████████| 391/391 [00:00<00:00, 28883.44it/s]
+Python worker stderr: 2026-10-15 14:01:35,858 | [INFO] | LegalHybridRetriever sẵn sàng: Alpha=0.20 | VectorDim=256 | Qdrant=[vietlawbert_chunks] | ES=[vietlaw_sparse_idx]
+Python worker stderr: 2026-10-15 14:01:35,858 | [INFO] | LegalGenerator khởi tạo thành công với chuỗi điều phối 3 tầng.
+Python worker stderr: 2026-10-15 14:01:35,868 | [INFO] | Đang xử lý câu hỏi: 'Theo quy định hiện hành, trường hợp Chánh Văn phòng Ủy ban nhân dân tỉnh; Thủ tr...'
+Python worker stderr: 2026-10-15 14:01:35,868 | [INFO] | Đang điều phối suy luận tới [Primary_Cloud_SOTA] (claude-3.5-sonnet)...
+Python worker stderr: 2026-10-15 14:01:37,163 | [INFO] | HTTP Request: POST https://hhtechapi.net/v1/chat/completions "HTTP/1.1 403 Forbidden"
+Python worker stderr: 2026-10-15 14:01:37,163 | [WARNING] | Mô hình [Primary_Cloud_SOTA] không phản hồi (Error code: 403 - {'error': 'Model "claude-3.5-sonnet" không có trong bảng giá hiện hành.'})..
+Python worker stderr: 2026-10-15 14:01:37,163 | [INFO] | Đang điều phối suy luận tới [Secondary_Cloud_Fast] (gemini-3.8-flash)...
+Python worker stderr: 2026-10-15 14:01:43,266 | [INFO] | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+Python worker stderr: 2026-10-15 14:01:43,280 | [INFO] | Mô hình [Secondary_Cloud_Fast] phản hồi thành công.
+Python worker stderr: 2026-10-15 14:02:27,917 | [INFO] | HTTP Request: POST http://localhost:6333/collections/vietlawbert_chunks/points/search "HTTP/1.1 200 OK"
+Python worker stderr: 2026-10-15 14:02:28,078 | [INFO] | POST http://localhost:9200/vietlaw_sparse_idx/_search [status:200 duration:0.143s]
+Python worker stderr: 2026-10-15 14:02:28,079 | [INFO] | Đang xử lý câu hỏi: 'Căn cứ pháp lý đối với nội dung Không được giúp sức, che giấu, ép buộc người bị ...'
+Python worker stderr: 2026-10-15 14:02:28,079 | [INFO] | Đang điều phối suy luận tới [Primary_Cloud_SOTA] (claude-3.5-sonnet)...
+Python worker stderr: 2026-10-15 14:02:28,220 | [INFO] | HTTP Request: POST https://hhtechapi.net/v1/chat/completions "HTTP/1.1 403 Forbidden"
+Python worker stderr: 2026-10-15 14:02:28,221 | [WARNING] | Mô hình [Primary_Cloud_SOTA] không phản hồi (Error code: 403 - {'error': 'Model "claude-3.5-sonnet" không có trong bảng giá hiện hành.'})..
+Python worker stderr: 2026-10-15 14:02:28,221 | [INFO] | Đang điều phối suy luận tới [Secondary_Cloud_Fast] (gemini-3.8-flash)...
+Python worker stderr: 2026-10-15 14:02:32,129 | [INFO] | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+Python worker stderr: 2026-10-15 14:02:32,130 | [INFO] | Mô hình [Secondary_Cloud_Fast] phản hồi thành công.
+Python worker stderr: 2026-10-15 14:02:32,506 | [INFO] | HTTP Request: POST http://localhost:6333/collections/vietlawbert_chunks/points/search "HTTP/1.1 200 OK"
+Python worker stderr: 2026-10-15 14:02:32,605 | [INFO] | POST http://localhost:9200/vietlaw_sparse_idx/_search [status:200 duration:0.097s]
+Python worker stderr: 2026-10-15 14:02:32,606 | [INFO] | Đang xử lý câu hỏi: 'Quy định pháp luật về Căn cứ Thông tư số 36/2006/TT-BVHTT ngày 20 tháng 3 năm 20...'
+Python worker stderr: 2026-10-15 14:02:32,606 | [INFO] | Đang điều phối suy luận tới [Primary_Cloud_SOTA] (claude-3.5-sonnet)...
+Python worker stderr: 2026-10-15 14:02:32,645 | [INFO] | HTTP Request: POST https://hhtechapi.net/v1/chat/completions "HTTP/1.1 403 Forbidden"
+Python worker stderr: 2026-10-15 14:02:32,646 | [WARNING] | Mô hình [Primary_Cloud_SOTA] không phản hồi (Error code: 403 - {'error': 'Model "claude-3.5-sonnet" không có trong bảng giá hiện hành.'})..
+Python worker stderr: 2026-10-15 14:02:32,646 | [INFO] | Đang điều phối suy luận tới [Secondary_Cloud_Fast] (gemini-3.8-flash)...
+Python worker stderr: 2026-10-15 14:02:36,410 | [INFO] | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+Python worker stderr: 2026-10-15 14:02:36,411 | [INFO] | Mô hình [Secondary_Cloud_Fast] phản hồi thành công.
+Python worker stderr: 2026-10-15 14:02:36,915 | [INFO] | HTTP Request: POST http://localhost:6333/collections/vietlawbert_chunks/points/search "HTTP/1.1 200 OK"
+Python worker stderr: 2026-10-15 14:02:37,095 | [INFO] | POST http://localhost:9200/vietlaw_sparse_idx/_search [status:200 duration:0.178s]
+Python worker stderr: 2026-10-15 14:02:37,097 | [INFO] | Đang xử lý câu hỏi: 'Theo quy định hiện hành, trường hợp Quyền hạn của Trưởng thôn, Tổ trưởng tổ dân ...'
+Python worker stderr: 2026-10-15 14:02:37,097 | [INFO] | Đang điều phối suy luận tới [Primary_Cloud_SOTA] (claude-3.5-sonnet)...
+Python worker stderr: 2026-10-15 14:02:37,137 | [INFO] | HTTP Request: POST https://hhtechapi.net/v1/chat/completions "HTTP/1.1 403 Forbidden"
+Python worker stderr: 2026-10-15 14:02:37,137 | [WARNING] | Mô hình [Primary_Cloud_SOTA] không phản hồi (Error code: 403 - {'error': 'Model "claude-3.5-sonnet" không có trong bảng giá hiện hành.'})..
+Python worker stderr: 2026-10-15 14:02:37,137 | [INFO] | Đang điều phối suy luận tới [Secondary_Cloud_Fast] (gemini-3.8-flash)...
+Python worker stderr: 2026-10-15 14:02:44,964 | [INFO] | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+Python worker stderr: 2026-10-15 14:02:44,966 | [INFO] | Mô hình [Secondary_Cloud_Fast] phản hồi thành công.
+Python worker stderr: 2026-10-15 14:03:54,786 | [INFO] | HTTP Request: POST http://localhost:6333/collections/vietlawbert_chunks/points/search "HTTP/1.1 200 OK"
+Python worker stderr: 2026-10-15 14:03:54,861 | [INFO] | POST http://localhost:9200/vietlaw_sparse_idx/_search [status:200 duration:0.073s]
+Python worker stderr: 2026-10-15 14:03:54,862 | [INFO] | Đang xử lý câu hỏi: 'Căn cứ pháp lý đối với nội dung SỬA ĐỔI, BỔ SUNG MỘT SỐ ĐIỀU CỦA THÔNG TƯ SỐ 111...'
+Python worker stderr: 2026-10-15 14:03:54,862 | [INFO] | Đang điều phối suy luận tới [Primary_Cloud_SOTA] (claude-3.5-sonnet)...
+Python worker stderr: 2026-10-15 14:03:58,124 | [INFO] | HTTP Request: POST https://hhtechapi.net/v1/chat/completions "HTTP/1.1 403 Forbidden"
+Python worker stderr: 2026-10-15 14:03:58,124 | [WARNING] | Mô hình [Primary_Cloud_SOTA] không phản hồi (Error code: 403 - {'error': 'Model "claude-3.5-sonnet" không có trong bảng giá hiện hành.'})..
+Python worker stderr: 2026-10-15 14:03:58,124 | [INFO] | Đang điều phối suy luận tới [Secondary_Cloud_Fast] (gemini-3.8-flash)...
+Python worker stderr: 2026-10-15 14:04:10,025 | [INFO] | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+Python worker stderr: 2026-10-15 14:04:10,026 | [INFO] | Mô hình [Secondary_Cloud_Fast] phản hồi thành công.
+Python worker stderr: 2026-10-15 14:06:45,044 | [INFO] | HTTP Request: POST http://localhost:6333/collections/vietlawbert_chunks/points/search "HTTP/1.1 200 OK"
+Python worker stderr: 2026-10-15 14:06:47,363 | [INFO] | POST http://localhost:9200/vietlaw_sparse_idx/_search [status:200 duration:2.318s]
+Python worker stderr: 2026-10-15 14:06:47,364 | [INFO] | Đang xử lý câu hỏi: 'Quy định pháp luật về Sửa đổi, bổ sung điểm a khoản 7 như sau:
+Python worker stderr: “a) Hướng dẫn, tổ...'
+Python worker stderr: 2026-10-15 14:06:47,365 | [INFO] | Đang điều phối suy luận tới [Primary_Cloud_SOTA] (claude-3.5-sonnet)...
+Python worker stderr: 2026-10-15 14:06:47,573 | [INFO] | HTTP Request: POST https://hhtechapi.net/v1/chat/completions "HTTP/1.1 403 Forbidden"
+Python worker stderr: 2026-10-15 14:06:47,574 | [WARNING] | Mô hình [Primary_Cloud_SOTA] không phản hồi (Error code: 403 - {'error': 'Model "claude-3.5-sonnet" không có trong bảng giá hiện hành.'})..
+Python worker stderr: 2026-10-15 14:06:47,574 | [INFO] | Đang điều phối suy luận tới [Secondary_Cloud_Fast] (gemini-3.8-flash)...
+Python worker stderr: 2026-10-15 14:06:49,258 | [INFO] | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+Python worker stderr: 2026-10-15 14:06:49,259 | [WARNING] | Mô hình [Secondary_Cloud_Fast] không phản hồi (Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing.
+Python worker stderr: 2026-10-15 14:06:49,259 | [INFO] | Đang điều phối suy luận tới [Local_Safety_Net] (Qwen/Qwen2.5-7B-Instruct)...
+Python worker stderr: 2026-10-15 14:06:49,933 | [INFO] | HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 404 Not Found"
+Python worker stderr: 2026-10-15 14:06:49,933 | [WARNING] | Mô hình [Local_Safety_Net] không phản hồi (Error code: 404 - {'error': {'message': "model 'Qwen/Qwen2.5-7B-Instruct' not found", 'type': '.
+Python worker stderr: 2026-10-15 14:06:49,933 | [ERROR] | Toàn bộ chuỗi Cascade đều thất bại. Lỗi cuối cùng: Error code: 404 - {'error': {'message': "model 'Qwen/Qwen2.5-7B-Instruct' not found", 'ty}
+Python worker stderr: 2026-10-15 14:06:58,258 | [INFO] | HTTP Request: POST http://localhost:6333/collections/vietlawbert_chunks/points/search "HTTP/1.1 200 OK"
+Python worker stderr: 2026-10-15 14:06:59,048 | [INFO] | POST http://localhost:9200/vietlaw_sparse_idx/_search [status:200 duration:0.788s]
+Python worker stderr: 2026-10-15 14:06:59,049 | [INFO] | Đang xử lý câu hỏi: 'Theo quy định hiện hành, trường hợp Khu phố Bình Nguyên:
+Python worker stderr: - Một phần Khu phố Chán...'
+Python worker stderr: 2026-10-15 14:06:59,049 | [INFO] | Đang điều phối suy luận tới [Primary_Cloud_SOTA] (claude-3.5-sonnet)...
+Python worker stderr: 2026-10-15 14:06:59,181 | [INFO] | HTTP Request: POST https://hhtechapi.net/v1/chat/completions "HTTP/1.1 403 Forbidden"
+Python worker stderr: 2026-10-15 14:06:59,182 | [WARNING] | Mô hình [Primary_Cloud_SOTA] không phản hồi (Error code: 403 - {'error': 'Model "claude-3.5-sonnet" không có trong bảng giá hiện hành.'})..
+Python worker stderr: 2026-10-15 14:06:59,182 | [INFO] | Đang điều phối suy luận tới [Secondary_Cloud_Fast] (gemini-3.8-flash)...
+Python worker stderr: 2026-10-15 14:07:00,727 | [INFO] | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 503 Service Unavailable"
+Python worker stderr: 2026-10-15 14:07:00,728 | [WARNING] | Mô hình [Secondary_Cloud_Fast] không phản hồi (Error code: 503 - [{'error': {'code': 503, 'message': 'This model is currently experiencing.
+Python worker stderr: 2026-10-15 14:07:00,728 | [INFO] | Đang điều phối suy luận tới [Local_Safety_Net] (Qwen/Qwen2.5-7B-Instruct)...
+Python worker stderr: 2026-10-15 14:07:00,995 | [INFO] | HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 404 Not Found"
+Python worker stderr: 2026-10-15 14:07:00,995 | [WARNING] | Mô hình [Local_Safety_Net] không phản hồi (Error code: 404 - {'error': {'message': "model 'Qwen/Qwen2.5-7B-Instruct' not found", 'type': '.
+Python worker stderr: 2026-10-15 14:07:00,996 | [ERROR] | Toàn bộ chuỗi Cascade đều thất bại. Lỗi cuối cùng: Error code: 404 - {'error': {'message': "model 'Qwen/Qwen2.5-7B-Instruct' not found", 'ty}
+Python worker stderr: 2026-10-15 14:07:09,536 | [INFO] | HTTP Request: POST http://localhost:6333/collections/vietlawbert_chunks/points/search "HTTP/1.1 200 OK"
+Python worker stderr: 2026-10-15 14:07:12,908 | [INFO] | POST http://localhost:9200/vietlaw_sparse_idx/_search [status:200 duration:3.370s]
+Python worker stderr: 2026-10-15 14:07:12,910 | [INFO] | Đang xử lý câu hỏi: 'Căn cứ pháp lý đối với nội dung Công việc chuyên môn liên quan đến chất lượng an...'
+Python worker stderr: 2026-10-15 14:07:12,910 | [INFO] | Đang điều phối suy luận tới [Primary_Cloud_SOTA] (claude-3.5-sonnet)...
+Python worker stderr: 2026-10-15 14:07:13,041 | [INFO] | HTTP Request: POST https://hhtechapi.net/v1/chat/completions "HTTP/1.1 403 Forbidden"
+Python worker stderr: 2026-10-15 14:07:13,042 | [WARNING] | Mô hình [Primary_Cloud_SOTA] không phản hồi (Error code: 403 - {'error': 'Model "claude-3.5-sonnet" không có trong bảng giá hiện hành.'})..
+Python worker stderr: 2026-10-15 14:07:13,042 | [INFO] | Đang điều phối suy luận tới [Secondary_Cloud_Fast] (gemini-3.8-flash)...
+Python worker stderr: 2026-10-15 14:07:21,815 | [INFO] | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/openai/chat/completions "HTTP/1.1 200 OK"
+Python worker stderr: 2026-10-15 14:07:21,819 | [INFO] | Mô hình [Secondary_Cloud_Fast] phản hồi thành công.
+Python worker stderr: 2026-10-15 14:07:45,705 | [INFO] | HTTP Request: POST http://localhost:6333/collections/vietlawbert_chunks/points/search "HTTP/1.1 200 OK"
+Python worker stderr: 2026-10-15 14:07:47,091 | [INFO] | POST http://localhost:9200/vietlaw_sparse_idx/_search [status:200 duration:1.353s]
+Python worker stderr: 2026-10-15 14:07:47,092 | [INFO] | Đang xử lý câu hỏi: 'Quy định pháp luật về Trong thời gian 03 ngày làm việc kể từ ngày có biên bản họ...'
+Python worker stderr: 2026-10-15 14:07:47,092 | [INFO] | Đang điều phối suy luận tới [Primary_Cloud_SOTA] (claude-3.5-sonnet)...
+Python worker stderr: 2026-10-15 14:07:47,288 | [INFO] | HTTP Request: POST https://hhtechapi.net/v1/chat/completions "HTTP/1.1 403 Forbidden"
+Python worker stderr: 2026-10-15 14:07:47,289 | [WARNING] | Mô hình [Primary_Cloud_SOTA] không phản hồi (Error code: 403 - {'error': 'Model "claude-3.5-sonnet" không có trong bảng giá hiện hành.'})..
+┌─────────────────────────────────────┬─────────────────────────────────────┬─────────────────────────────────────┬─────────────────────────────────────┬─────────────────────────────────────┐
+│ query                               │ ground_truth_chunk                  │ ground_truth_doc_number             │ ground_truth_article                │ [VietLawBERT-Full-RAG-Pipeline]     │
+│                                     │                                     │                                     │                                     │ {{query}}                           │
+├─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ Theo quy định hiện hành, trường hợp │ 187710_art_5_cl_5                   │ 17/2026/QĐ-UBND                     │ Điều 5                              │ [FAIL] {"query": "Theo quy định     │
+│ Chánh Văn phòng Ủy ban nhân dân     │                                     │                                     │                                     │ hiện hành, trường hợp Chánh Văn     │
+│ tỉnh; Thủ trưởng các Sở, Ban, ngành │                                     │                                     │                                     │ phòng Ủy ban nhân dân tỉnh; Thủ     │
+│ của tỉnh; Chủ tịch Ủy ban nhân dân  │                                     │                                     │                                     │ trưởng các Sở, Ban, ngành của tỉnh; │
+│ các xã, phường và thì thẩm quyền    │                                     │                                     │                                     │ Chủ tịch Ủy ban nhân dân các xã,    │nh.'})..
+│ thuộc cơ quan nào?                  │                                     │                                     │                                     │ phường và thì thẩm quyền thuộc cơ   │
+│                                     │                                     │                                     │                                     │ quan nào?", "answer": "Cơ sở dữ     │
+│                                     │                                     │                                     │                                     │ liệu hiện tại không đủ ...          │iencing.
+├─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ Căn cứ pháp lý đối với nội dung     │ 7d0ba5d0-5a68-11f1-8bec-951764fcac… │ 58/2026/TT-BCA                      │ Điều 6                              │ [PASS] {"query": "Căn cứ pháp lý    │
+│ Không được giúp sức, che giấu, ép   │                                     │                                     │                                     │ đối với nội dung Không được giúp    │ype': '.
+│ buộc người bị tạm giữ, người bị tạm │                                     │                                     │                                     │ sức, che giấu, ép buộc người bị tạm │d", 'ty}
+│ giam và người khác vi phạm Nội quy  │                                     │                                     │                                     │ giữ, người bị tạm giam và người     │
+│ cơ sở giam giữ  được hướng dẫn ra   │                                     │                                     │                                     │ khác vi phạm Nội quy cơ sở giam giữ │
+│ sao?                                │                                     │                                     │                                     │ được hướng dẫn ra sao?", "answer":  │
+│                                     │                                     │                                     │                                     │ "Cơ sở dữ liệu hiện tại không đủ    │
+│                                     │                                     │                                     │                                     │ căn cứ pháp lý ...                  │
+├─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ Quy định pháp luật về Căn cứ Thông  │ 05817360-9135-11f1-9898-3114ffbdc1… │ 22/2026/NQ-HĐND                     │ Điều khoản liên quan                │ [FAIL] {"query": "Quy định pháp     │
+│ tư số 36/2006/TT-BVHTT ngày 20      │                                     │                                     │                                     │ luật về Căn cứ Thông tư số          │
+│ tháng 3 năm 2006 của Bộ Văn hóa –   │                                     │                                     │                                     │ 36/2006/TT-BVHTT ngày 20 tháng 3    │
+│ Thông tin về việc hướng dẫn thực    │                                     │                                     │                                     │ năm 2006 của Bộ Văn hóa – Thông tin │
+│ hiện một  được giải quyết như thế   │                                     │                                     │                                     │ về việc hướng dẫn thực hiện một     │
+│ nào?                                │                                     │                                     │                                     │ được giải quyết như thế nào?",      │
+│                                     │                                     │                                     │                                     │ "answer": "Cơ sở dữ liệu hiện tại   │
+│                                     │                                     │                                     │                                     │ không đủ căn cứ pháp lý để g...     │
+├─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ Theo quy định hiện hành, trường hợp │ 100d9740-9f8c-11f1-a23d-b142cce154… │ 126/2026/QĐ-UBND                    │ Điều 6                              │ [FAIL] {"query": "Theo quy định     │
+│ Quyền hạn của Trưởng thôn, Tổ       │                                     │                                     │                                     │ hiện hành, trường hợp Quyền hạn của │
+│ trưởng tổ dân phố                   │                                     │                                     │                                     │ Trưởng thôn, Tổ trưởng tổ dân       │
+│ a) Đại diện cho thôn, tổ dân phố    │                                     │                                     │                                     │ phố\na) Đại diện cho thôn, tổ dân   │
+│ trong các quan hệ liên quan đến     │                                     │                                     │                                     │ phố trong các quan hệ liên quan đến │
+│ hoạt độ thì thẩm quyền thuộc cơ     │                                     │                                     │                                     │ hoạt độ thì thẩm quyền thuộc cơ     │
+│ quan nào?                           │                                     │                                     │                                     │ quan nào?", "answer": "Căn cứ theo  │
+│                                     │                                     │                                     │                                     │ Quyết định số 140/2...              │
+├─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ Căn cứ pháp lý đối với nội dung SỬA │ 9a8edfd0-956b-11f1-93d5-9373b32da5… │ 104/2026/TT-BQP                     │ Điều khoản liên quan                │ [PASS] {"query": "Căn cứ pháp lý    │
+│ ĐỔI, BỔ SUNG MỘT SỐ ĐIỀU CỦA THÔNG  │                                     │                                     │                                     │ đối với nội dung SỬA ĐỔI, BỔ SUNG   │
+│ TƯ SỐ 111/2021/TT-BQP NGÀY 24 THÁNG │                                     │                                     │                                     │ MỘT SỐ ĐIỀU CỦA THÔNG TƯ SỐ         │
+│ 8 NĂM 2021 CỦA BỘ TRƯỞNG BỘ QUỐC    │                                     │                                     │                                     │ 111/2021/TT-BQP NGÀY 24 THÁNG 8 NĂM │
+│ PHÒNG QUY ĐỊ được hướng dẫn ra sao? │                                     │                                     │                                     │ 2021 CỦA BỘ TRƯỞNG BỘ QUỐC PHÒNG    │
+│                                     │                                     │                                     │                                     │ QUY ĐỊ được hướng dẫn ra sao?",     │
+│                                     │                                     │                                     │                                     │ "answer": "Căn cứ theo Thông tư số  │
+│                                     │                                     │                                     │                                     │ 104/2026/TT-BQP, tại Đi...          │
+├─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ Quy định pháp luật về Sửa đổi, bổ   │ c9f60430-64a9-11f1-b2be-0f8f356793… │ 45/2026/TT-BGDĐT                    │ Điều 1                              │ [FAIL] {"query": "Quy định pháp     │
+│ sung điểm a khoản 7 như sau:        │                                     │                                     │                                     │ luật về Sửa đổi, bổ sung điểm a     │
+│ “a) Hướng dẫn, tổ chức thực hiện    │                                     │                                     │                                     │ khoản 7 như sau:\n“a) Hướng dẫn, tổ │
+│ công tác chuyên môn, nghiệp vụ;     │                                     │                                     │                                     │ chức thực hiện công tác chuyên môn, │
+│ công tác đánh  được giải quyết như  │                                     │                                     │                                     │ nghiệp vụ; công tác đánh  được giải │
+│ thế nào?                            │                                     │                                     │                                     │ quyết như thế nào?", "answer": "Lỗi │
+│                                     │                                     │                                     │                                     │ hệ thống: Hiện không thể kết nối    │
+│                                     │                                     │                                     │                                     │ tới bất kỳ dị...                    │
+├─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ Theo quy định hiện hành, trường hợp │ e1acb9f0-896d-11f1-a58c-ed53399b99… │ 54/2026/NQ-HĐND                     │ Điều 8                              │ [PASS] {"query": "Theo quy định     │
+│ Khu phố Bình Nguyên:                │                                     │                                     │                                     │ hiện hành, trường hợp Khu phố Bình  │
+│ - Một phần Khu phố Chánh cũ thì     │                                     │                                     │                                     │ Nguyên:\n- Một phần Khu phố Chánh   │
+│ thẩm quyền thuộc cơ quan nào?       │                                     │                                     │                                     │ cũ thì thẩm quyền thuộc cơ quan     │
+│                                     │                                     │                                     │                                     │ nào?", "answer": "Lỗi hệ thống:     │
+│                                     │                                     │                                     │                                     │ Hiện không thể kết nối tới bất kỳ   │
+│                                     │                                     │                                     │                                     │ dịch vụ AI nào để tổng hợp câu trả  │
+│                                     │                                     │                                     │                                     │ lời.", "retrieved_do...             │
+├─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ Căn cứ pháp lý đối với nội dung     │ dce8f440-67d7-11f1-b409-03736c4d1a… │ 22/2026/TT-BXD                      │ Điều 4                              │ [PASS] {"query": "Căn cứ pháp lý    │
+│ Công việc chuyên môn liên quan đến  │                                     │                                     │                                     │ đối với nội dung Công việc chuyên   │
+│ chất lượng an toàn kỹ thuật và bảo  │                                     │                                     │                                     │ môn liên quan đến chất lượng an     │
+│ vệ môi trường của xe cơ giới, xe    │                                     │                                     │                                     │ toàn kỹ thuật và bảo vệ môi trường  │
+│ máy chuyên dùng,  được hướng dẫn ra │                                     │                                     │                                     │ của xe cơ giới, xe máy chuyên dùng, │
+│ sao?                                │                                     │                                     │                                     │ được hướng dẫn ra sao?", "answer":  │
+│                                     │                                     │                                     │                                     │ "Căn cứ theo Thông tư số            │
+│                                     │                                     │                                     │                                     │ 22/2026/TT-BXD, tại Kho...          │
+├─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ Quy định pháp luật về Trong thời    │ 186877_art_16_cl_6                  │ 22/2026/QĐ-UBND                     │ Điều 16                             │ [PASS] {"query": "Quy định pháp     │
+│ gian 03 ngày làm việc kể từ ngày có │                                     │                                     │                                     │ luật về Trong thời gian 03 ngày làm │
+│ biên bản họp Hội đồng xét tài trợ,  │                                     │                                     │                                     │ việc kể từ ngày có biên bản họp Hội │
+│ đặt hàng, Sở Khoa học và Công nghệ  │                                     │                                     │                                     │ đồng xét tài trợ, đặt hàng, Sở Khoa │
+│ thô được giải quyết như thế nào?    │                                     │                                     │                                     │ học và Công nghệ thô được giải      │
+│                                     │                                     │                                     │                                     │ quyết như thế nào?", "answer": "Căn │
+│                                     │                                     │                                     │                                     │ cứ theo Quyết định số               │
+│                                     │                                     │                                     │                                     │ 22/2026/QĐ-UBND của Ủy ba...        │
+├─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┼─────────────────────────────────────┤
+│ Theo quy định hiện hành, trường hợp │ 8422d4e0-49cb-11f1-886a-ff8436e0b7… │ 07/2026/NQ-HĐND                     │ Điều 8                              │ [FAIL] {"query": "Theo quy định     │
+│ Việc chuẩn bị kỳ họp thường lệ được │                                     │                                     │                                     │ hiện hành, trường hợp Việc chuẩn bị │
+│ tiến hành như sau:                  │                                     │                                     │                                     │ kỳ họp thường lệ được tiến hành như │
+│ a) Trước khi tổ chức Hội nghị liên  │                                     │                                     │                                     │ sau:\na) Trước khi tổ chức Hội nghị │
+│ tịch để chuẩn bị nội dung kỳ h thì  │                                     │                                     │                                     │ liên tịch để chuẩn bị nội dung kỳ h │
+│ thẩm quyền thuộc cơ quan nào?       │                                     │                                     │                                     │ thì thẩm quyền thuộc cơ quan nào?", │
+│                                     │                                     │                                     │                                     │ "answer": "Lỗi hệ thống: Hiện không │
+│                                     │                                     │                                     │                                     │ thể kế...                           │
+└─────────────────────────────────────┴─────────────────────────────────────┴─────────────────────────────────────┴─────────────────────────────────────┴─────────────────────────────────────┘
+✓ Eval complete (ID: eval-Xft-2026-10-15T07:00:56)
+
+» View results: promptfoo view
+» Share with your team: https://promptfoo.app
+» Feedback: https://promptfoo.dev/feedback
+
+Total Tokens: 38.439
+  Grading: 38.439 (28.966 prompt, 1.685 completion, 7.788 cached, 764 reasoning)
+Incurred Tokens: 30.651
+  Cached Savings: 7.788
+  Actual Target Requests: 10
+
+Results:
+  ✓ 5 passed (50.00%)
+  ✗ 5 failed (50.00%)
+  0 errors (0%)
+Duration: 7m 48s (concurrency: 1)
+
+telemetry.shutdown() timed out during shutdown
+(venv) dell@dell-G7-7588:~/Desktop/evaluation$ 

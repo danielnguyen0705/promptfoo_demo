@@ -48,7 +48,7 @@ tests/
 ## 2. Ánh xạ file ↔ hạng mục đặc tả
 
 | Tầng | File | Hạng mục đặc tả |
-| --- | --- | --- | --- |
+| --- | --- | --- | 
 | 1 | test_tier1_data_curation, test_ast_parser, test_legal_chunker, test_text_cleaner | AST Parser, chunk theo đơn vị pháp lý |
 | 1 | test_quality_text_gate, test_crawl_audit | Bộ lọc chất lượng (nguyên âm ≥0.05) |
 | 2 | test_tier2_graph_multistore, test_hin_22_relations | Đồ thị HIN Neo4j 22 quan hệ, Qdrant |
